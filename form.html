@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>Account Opening Form</title>
+  <style>
+    
+body {
+  font-family: montserrat, roboto;
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#title {
+  color: black;
+  text-align: center;
+  margin-bottom: 0;
+}
+
+#description {
+  color: black;
+  text-align: center;
+  margin: 10px 30px 30px 30px;
+  width: 600px;
+  font-style: italic;
+}
+
+#survey-form {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 135vh;
+  width: 100%;
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.8);
+  padding: 30px 20px 25px 20px;
+  border-radius: 5px;
+  max-width: 600px;
+}
+
+@media screen and (max-width: 800px) {
+  #survey-form {
+    width: 70%;
+    height: 140vh;
+  }
+  #description {
+    width: 70%;
+  }
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.label {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.label, input[type="radio"], input[type="checkbox"] {
+  vertical-align: top;
+}
+
+ .input {
+  height: 35px;
+  font-size: 17px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-family: montserrat, roboto;
+  font-weight: 500;
+}
+
+.input::placeholder {
+    font-size: 17px;
+    font-weight: 400;
+}
+
+span {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+#dropdown {
+  height: 35px;
+  font-size: 17px;
+  padding-left: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-family: montserrat, roboto;
+  font-weight: 500;
+}
+
+p {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 10px;
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.radio {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+input[type="radio"] {
+      width: 20px; 
+      height: 20px;
+      margin-top: 5px;
+}
+
+.checkbox {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: black;
+  font-weight: 500;
+  margin-top: 10px;
+  line-height: 30px;
+}
+
+input[type="checkbox"] {
+  width: 20px; 
+  height: 20px;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 120px;
+  outline: none;
+  padding: 10px;
+  font-size: 17px;
+  font-family: montserrat;
+  border-radius: 5px;
+  color: black;
+  font-weight: 500;
+}
+
+button {
+  height: 40px;
+  background-color: rgb(0, 127, 255);
+  color: white;
+  font-weight: 500;
+  font-family: montserrat;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+  </style>
+</head>
+<body>
+  <h1 id="title">Account Opening Form</h1>
+  <p id="description">
+    Please fill out form below, and submit as soon as possible. Failure to submit will automatically disqualify you from any further consideration.
+  </p>
+  <form id="survey-form">
+    <fieldset>
+      <label class="label" id="name-label" for="name">Name</label> <input class="input" id="name" type="text" required placeholder="Enter your name">
+    </fieldset>
+    <fieldset>
+      <label class="label" id="email-label" for="email">Email</label><input class="input" id="email" type="email" required placeholder="Enter your email">
+    </fieldset>
+    <fieldset>
+      <label class="label" id="number-label" for="number">Age <span>(optional)</span></label><input class="input" id="number" type="number" min="13" max="120" placeholder="Age"> 
+    </fieldset>
+    <fieldset>
+      <label class="label">What option best describes you?</label>
+      <select id="dropdown" required>
+        <option id="option-1">Select</option>
+        <option>Checkings</option>
+        <option>Savings</option>
+    </select>
+    </fieldset>
+    <fieldset>
+      <p>Would you recommend us?<p>
+      <div class="radio">
+        <label><input type="radio" name="option" value="radio" checked> Definitely</label>
+    <label><input type="radio" name="option" value="radio"> Maybe</label>
+    <label><input type="radio" name="option" value="radio"> Not sure</label>
+    </div>
+    </fieldset>
+    <fieldset>
+      <p>What would you like to see improved? <span>(Check all that apply)</span></p>
+      <div class="checkbox">
+        <label><input type="checkbox" value="check1"> Customer Service</label>
+        <label><input type="checkbox" value="check1"> Atmosphere</label>
+        <label><input type="checkbox" value="check1"> Security</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <label class="label">Any comments or suggestions?</label>
+      <textarea placeholder="Type here..."></textarea>
+    </fieldset>
+    <fieldset>
+    <button id="submit" value="submit">Submit</button>
+    </fieldset>
+  </form>
+</body>
+</html>
